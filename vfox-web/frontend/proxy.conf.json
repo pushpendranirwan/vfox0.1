@@ -1,0 +1,7 @@
+{
+
+    "/mohips/api/*": {
+        "target": "http://crystal.tekmindz.com",  
+        "secure": false         
+    }
+}  

@@ -8,7 +8,7 @@
 	<name>vfox-auth</name>
 
 	<parent>
-		<groupId>com.tmz.wm</groupId>
+		<groupId>com.vfoexchange</groupId>
 		<artifactId>vfox-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../vfox-parent/pom.xml</relativePath>

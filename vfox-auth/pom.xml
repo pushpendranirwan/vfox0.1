@@ -1,36 +1,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>vfox-auth</artifactId>
-	<packaging>jar</packaging>
+    <artifactId>vfox-auth</artifactId>
+    <packaging>jar</packaging>
 
-	<name>vfox-auth</name>
+    <name>vfox-auth</name>
 
-	<parent>
-		<groupId>com.vfoexchange</groupId>
-		<artifactId>vfox-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../vfox-parent/pom.xml</relativePath>
-	</parent>
+    <parent>
+        <groupId>com.vfoexchange</groupId>
+        <artifactId>vfox-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../vfox-parent/pom.xml</relativePath>
+    </parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-	<dependencies>
-		<dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-jwt</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.security.oauth</groupId>
-        <artifactId>spring-security-oauth2</artifactId>
-    </dependency>
-            <dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-	</dependencies>
-			
+    </dependencies>
+
 </project>

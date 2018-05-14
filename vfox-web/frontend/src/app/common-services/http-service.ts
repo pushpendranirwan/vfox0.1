@@ -35,7 +35,7 @@ apiUrl: string;
       .map(this.extractData)
       .catch(this.handleError);
   }
-
+/*
   postLogin(url: string, data: any){
     //for login
     // debugger;
@@ -50,7 +50,22 @@ apiUrl: string;
       .set('x-Auth-Token', this.Login_Response.result.token) })
       .map(this.extractData)
       .catch(this.handleError);
-   }
+  } */
+
+  createTextPlainHeader() {
+    this.headers = new Headers();
+    this.headers.set('Content-Type', 'application/json');
+  }
+
+  postLogin(url: string, data: any): Observable<any> {
+    //debugger;
+    let postUrl = this.configuration.ApiUrl + url;
+    return this._http.post(postUrl, JSON.stringify(data), { headers: new HttpHeaders().set('Content-Type', 'application/json') })
+      .map(this.extractData)
+      .catch(this.handleError);
+
+  }
+
 
    putLogin(url: string):Observable<any>{
     //for login

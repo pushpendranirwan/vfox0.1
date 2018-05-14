@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { navItems } from './../../_nav';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateLangService } from '../../services/translate.service';
 import { UtilService } from "../../common-services/util-services";
@@ -11,7 +10,6 @@ import { Configuration } from "../../common-services/app-constant";
   templateUrl: './default-layout.component.html'
 })
 export class DefaultLayoutComponent {
-  public navItems = navItems;
   public sidebarMinimized = true;
   private changes: MutationObserver;
   public element: HTMLElement = document.body;
@@ -36,13 +34,13 @@ export class DefaultLayoutComponent {
     this.translateService.translateLang(language, userType);
   } 
 logout() {
-    //debugger;
+    debugger;
     //this.token = undefined;
     localStorage.removeItem('token');
-    localStorage.removeItem('payid');
     localStorage.removeItem('loginusername');
     localStorage.removeItem('loginpassword');
     localStorage.removeItem('loginDataDetail');
+   
     // localStorage.removeItem('token_expires_at');
     // localStorage.removeItem('token_expire_msg');
     // localStorage.removeItem('token_requested'); //Added

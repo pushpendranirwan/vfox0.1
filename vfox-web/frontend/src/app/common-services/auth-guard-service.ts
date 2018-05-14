@@ -19,18 +19,17 @@ export class AuthGuard implements CanActivateChild {
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    // debugger;
+     debugger;
     let url = '/dashboard/' + route.routeConfig.path.split('/:')[0];
     return this.checkLogin(url);
   }
 
   checkLogin(currentStat: any): boolean {
-    // debugger;
-  /*  let restrictedPageForAdmin: string[] = this.configuration.restrictedPageForAdmin;
-
-    let restrictedPageForCompany: string[] = this.configuration.restrictedPageForCompany;
-    let restrictedPageForMOI: string[] = this.configuration.restrictedPageForMOI;
-    let restrictedPageForSC: string[] = this.configuration.restrictedPageForSC;
+     debugger;
+   let restrictedPageForAdmin: string[] = this.configuration.restrictedPageForAdmin;
+    let restrictedPageForADVISOR: string[] = this.configuration.restrictedPageForADVISOR;
+    let restrictedPageForUser: string[] = this.configuration.restrictedPageForUser;
+    /*  let restrictedPageForSC: string[] = this.configuration.restrictedPageForSC;
     let restrictedPageForUser: string[] = this.configuration.restrictedPageForUser; */
     let resPage: boolean;
 
@@ -42,28 +41,28 @@ export class AuthGuard implements CanActivateChild {
     // public Company_ROLE_ID: string = '3';
     // public SC_ROLE_ID: string = '2';
     // public USER_ROLE_ID: string = '1';
-     let loginDataTest = {
+    //  let loginDataTest = {
         
-          roleId: 1
-      }
-      this.utilService.setData(loginDataTest, 'loginDataDetail');
+    //       roleId: 1
+    //   }
+    //   this.utilService.setData(loginDataTest, 'loginDataDetail');
 
      if (this.utilService.getData('loginDataDetail') !== null) {
        if (this.utilService.getData('loginDataDetail').roleId.toString()) {
          switch (this.utilService.getData('loginDataDetail').roleId.toString()) {
            case this.configuration.ADMIN_ROLE_ID:
-             //  alert('restrictedPageForAdmin---'+restrictedPageForAdmin);
-            // resPage = restrictedPageForAdmin.indexOf(currentPath) === -1;
+               alert('restrictedPageForAdmin---'+restrictedPageForAdmin);
+             resPage = restrictedPageForAdmin.indexOf(currentPath) === -1;
              break;
            
            
            case this.configuration.ADVISOR_ROLE_ID:
-            //  alert('restrictedPageForBroker---'+restrictedPageForBroker);
-            // resPage = restrictedPageForSC.indexOf(currentPath) === -1;
+              alert('restrictedPageForBroker---'+restrictedPageForADVISOR);
+             resPage = restrictedPageForADVISOR.indexOf(currentPath) === -1;
              break;
            case this.configuration.CLIENT_ROLE_ID:
-             // alert('restrictedPageForUser---'+restrictedPageForUser);
-            // resPage = restrictedPageForUser.indexOf(currentPath) === -1;
+              alert('restrictedPageForUser---'+restrictedPageForUser);
+            resPage = restrictedPageForUser.indexOf(currentPath) === -1;
              break;
            
            default:

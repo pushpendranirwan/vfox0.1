@@ -8,7 +8,7 @@ export class LoginService {
   constructor(private httpService: HttpService, private configuration: Configuration) {
    }
 
-  login(username:string, password: string) { 
+ /* login(username:string, password: string) { 
 
     console.log('LOGIN Response', JSON.stringify({
       username: username,
@@ -16,11 +16,18 @@ export class LoginService {
     }));
 
       return this.httpService.postWithoutLogin(this.configuration.API_LOGIN_URL, {
-        username: username,
+        email: username,
         password: password
     });
 
-    }
+  } */
+
+  login(username:string, password: String) {
+    return this.httpService.postLogin(this.configuration.API_LOGIN_URL, {
+      email: username,
+      password: password
+    });
+  }
   
 }
  

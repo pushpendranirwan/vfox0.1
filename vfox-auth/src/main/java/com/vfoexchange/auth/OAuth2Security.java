@@ -19,7 +19,7 @@ import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFacto
 
 @Configuration
 @EnableAuthorizationServer
-public class OAuth2Security  extends AuthorizationServerConfigurerAdapter{
+public class OAuth2Security extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private Environment environment;
 
@@ -40,12 +40,12 @@ public class OAuth2Security  extends AuthorizationServerConfigurerAdapter{
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory().withClient(config.getClientId()).secret(config.getClientSecret()).authorizedGrantTypes("password")
-                .scopes("read","write").accessTokenValiditySeconds(100);
+                .scopes("read", "write").accessTokenValiditySeconds(100);
     }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.pathMapping("/oauth/token",config.getAuthPath() );
+        endpoints.pathMapping("/oauth/token", config.getAuthPath());
         endpoints.tokenStore(tokenStore()).tokenEnhancer(jwtTokenEnhancer()).authenticationManager(authenticationManager);
         endpoints.userDetailsService(userDetailsService);
     }

@@ -4,7 +4,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 import com.vfoexchange.platform.model.User;
 
-public interface UserService extends UserDetailsService{
+public interface UserService extends UserDetailsService {
 
     public void addUser(User user);
 

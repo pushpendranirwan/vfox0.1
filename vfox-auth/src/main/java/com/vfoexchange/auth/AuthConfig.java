@@ -9,7 +9,7 @@ public class AuthConfig {
     private String authPath;
     private String clientId;
     private String clientSecret;
-    
+
 
     public String getClientId() {
         return clientId;

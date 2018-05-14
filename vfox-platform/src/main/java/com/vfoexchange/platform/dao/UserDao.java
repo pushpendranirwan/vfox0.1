@@ -4,10 +4,10 @@ import com.vfoexchange.platform.model.User;
 
 public interface UserDao {
 
-	public void add(User user);
+    public void add(User user);
 
-	public User find(int user);
-	
-	public User findByUsername(String username);
+    public User find(int user);
+
+    public User findByUsername(String username);
 
 }

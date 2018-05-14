@@ -16,22 +16,22 @@ public class UserDaoImpl implements UserDao {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    public void add(User user){
+    public void add(User user) {
         jdbcTemplate.update("INSERT INTO users (id, username, password) VALUES (?, ?, ?)",
                 user.getId(), user.getUsername(), user.getPassword());
     }
 
-    public User find(int userId){
+    public User find(int userId) {
         User user = (User) jdbcTemplate.queryForObject("SELECT * FROM users where id = ? ",
-                new Object[] { userId }, new BeanPropertyRowMapper<>(User.class));
+                new Object[]{userId}, new BeanPropertyRowMapper<>(User.class));
         return user;
     }
 
-	@Override
-	public User findByUsername(String username) {
-		 User user = (User) jdbcTemplate.queryForObject("SELECT * FROM users where username = ? ",
-	                new Object[] { username }, new BeanPropertyRowMapper<>(User.class));
-	        return user;
-	}
+    @Override
+    public User findByUsername(String username) {
+        User user = (User) jdbcTemplate.queryForObject("SELECT * FROM users where username = ? ",
+                new Object[]{username}, new BeanPropertyRowMapper<>(User.class));
+        return user;
+    }
 }
 

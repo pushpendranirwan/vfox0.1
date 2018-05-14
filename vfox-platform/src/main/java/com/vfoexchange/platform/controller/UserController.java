@@ -11,10 +11,10 @@ import com.vfoexchange.platform.service.UserService;
 
 @RestController
 public class UserController {
-	
+
 	@Autowired
 	UserService userService;
-	
+
 	@RequestMapping(value = "/add/user", method = RequestMethod.POST)
 	public String getAccountDetail(@RequestBody User user) {
 		userService.addUser(user);

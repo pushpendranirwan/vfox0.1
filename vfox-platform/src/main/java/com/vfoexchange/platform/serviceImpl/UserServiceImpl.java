@@ -15,18 +15,22 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserDao userDao;
 
-    public void addUser(User user){
+    public void addUser(User user) {
         userDao.add(user);
-    };
+    }
 
-    public User find(int userId){
+    ;
+
+    public User find(int userId) {
 
         return userDao.find(userId);
     }
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
-		return userDao.findByUsername(username);
-	};
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+        return userDao.findByUsername(username);
+    }
+
+    ;
 }

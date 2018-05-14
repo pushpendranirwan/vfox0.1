@@ -14,9 +14,9 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
 @ComponentScan(basePackages = "com.vfoexchange")
-@PropertySource(value = { "classpath:application.properties" })
+@PropertySource(value = {"classpath:application.properties"})
 public class DbConfig {
-	
+
 
     @Autowired
     private Environment env;

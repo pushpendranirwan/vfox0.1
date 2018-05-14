@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(basePackages = { "com.tmz.wm" })
-@PropertySources({ @PropertySource(value = "classpath:application.properties") })
-@CrossOrigin(allowedHeaders="*",allowCredentials="true")
+@ComponentScan(basePackages = {"com.vfoexchange"})
+@PropertySources({@PropertySource(value = "classpath:application.properties")})
+@CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
 @EnableResourceServer
 @Configuration
-public class CoreWebApplication {
+public class VfoxRestSever {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CoreWebApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(VfoxRestSever.class, args);
+    }
 }

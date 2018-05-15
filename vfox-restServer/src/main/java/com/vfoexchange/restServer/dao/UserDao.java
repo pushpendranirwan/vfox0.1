@@ -1,6 +1,6 @@
-package com.vfoexchange.platform.dao;
+package com.vfoexchange.restServer.dao;
 
-import com.vfoexchange.platform.model.User;
+import com.vfoexchange.restServer.model.User;
 
 public interface UserDao {
 

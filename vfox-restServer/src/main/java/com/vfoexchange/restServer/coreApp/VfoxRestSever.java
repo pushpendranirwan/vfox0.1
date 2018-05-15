@@ -1,4 +1,4 @@
-package com.vfoexchange.web;
+package com.vfoexchange.restServer.coreApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

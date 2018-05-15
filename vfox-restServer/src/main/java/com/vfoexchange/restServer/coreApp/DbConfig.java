@@ -1,4 +1,4 @@
-package com.vfoexchange.web;
+package com.vfoexchange.restServer.coreApp;
 
 
 import javax.sql.DataSource;

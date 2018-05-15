@@ -1,4 +1,4 @@
-package com.vfoexchange.platform.daoImpl;
+package com.vfoexchange.restServer.daoImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -6,8 +6,8 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.vfoexchange.platform.dao.UserDao;
-import com.vfoexchange.platform.model.User;
+import com.vfoexchange.restServer.dao.UserDao;
+import com.vfoexchange.restServer.model.User;
 
 @Repository
 @Qualifier("userDao")

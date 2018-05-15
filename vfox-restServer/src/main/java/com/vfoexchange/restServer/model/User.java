@@ -1,4 +1,4 @@
-package com.vfoexchange.platform.model;
+package com.vfoexchange.restServer.model;
 
 import java.util.Collection;
 

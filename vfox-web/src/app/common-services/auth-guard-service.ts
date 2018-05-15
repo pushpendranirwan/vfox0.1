@@ -51,7 +51,7 @@ export class AuthGuard implements CanActivateChild {
        if (this.utilService.getData('loginDataDetail').roleId.toString()) {
          switch (this.utilService.getData('loginDataDetail').roleId.toString()) {
            case this.configuration.ADMIN_ROLE_ID:
-               alert('restrictedPageForAdmin---'+restrictedPageForAdmin);
+               //alert('restrictedPageForAdmin---'+restrictedPageForAdmin);
              resPage = restrictedPageForAdmin.indexOf(currentPath) === -1;
              break;
            

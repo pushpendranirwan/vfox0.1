@@ -1,84 +1,71 @@
-<!-- <div class="lag_change login_lg_change pull-right">
-  <select (change)="switchLanguage($event.target.value)" class="form-control">
-    <option value="en">English</option>
-    <option value="ar">Arabic</option>
-  </select>
-</div> -->
-<div class="app flex-row align-items-center">
+<div class="container">
+    <!--Home Header Starts here-->
+    <div class="d-flex flex-column flex-md-row align-items-center home_header">
+        <h5 class="my-0 mr-md-auto"><img src="assets/img/vfox_logo.png" alt="VFOX"/></h5>
+        <a class="btn btn-outline-primary btn-outline-white" href="#">Sign In</a>
+    </div>
+    <!--Home Header Ends here-->
+    <div class="row">
+        <!--Home Left Container Starts here-->
+        <div class="col-lg-8 col-md-7">
+            <div class="home_heading">Preservation and<br/> Enhancement of Wealth</div>
+            <div class="clearfix"></div>
+            <p class="home_txt">Lorem ipsum dolor sit amet, consectetur adipscing elit,<br/>
+                sed do eiusmod tempor incididunt ut labore et dolore<br/> magna aliqua.
+            </p>
+            <div class="clearfix"></div>
+            <p class="home_video"><img src="assets/img/video_placholder.png" alt="Video"/></p>
+        </div>
+        <!--Home Left Container Ends here-->
+        <!--Home Right Container Starts here-->
+        <div class="col-lg-4 col-md-5">
+            <div class="card reg_card">
+                <div class="card-body reg_form">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div *ngIf="error" style="color:#ff9800">{{errorMsg}}</div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <input formControlName="username" type="email" id="inputEmail" class="form-control"
+                                   placeholder=""
+                                   required autofocus>
+                            <p class="erros-msg"
+                               *ngIf="loginForm.get('username').hasError('required') && loginForm.get('username').touched">
+                                Username is Required</p>
 
-    <div class="container">
-        <h2 class="login_logo text-center">
-            <!-- <img src="assets/img/brand/logo.png" /> -->
-        </h2>
+                            <p class="erros-msg"
+                               *ngIf="loginForm.get('username').hasError('invalidEmailAddress')">Please enter valid
+                                email address</p>
+                        </div>
 
-        <div class="row justify-content-center">
-            <div class="col-sm-8">
-                <div class="page_container">
-                    <div class="inside_container">
-                        <div class="login_subheading text-center">{{'SUB-HEADING' | translate}}</div>
-                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                            <div *ngIf="error" style="color:#ff9800">{{errorMsg}}</div>
-                            <div class="form-group">
-                                <input class="form-control" maxlength="50" placeholder="{{'USERNAME' | translate}}"
-                                       formControlName="username" type="text">
-                                <p class="erros-msg"
-                                   *ngIf="loginForm.get('username').hasError('required') && loginForm.get('username').touched">
-                                    Username is Required</p>
-
-                                <p *ngIf="loginForm.get('username').hasError('invalidEmailAddress')">Please enter valid
-                                    email address</p>
-
-
-                            </div>
-
-                            <div class="form-group mb-0">
-                                <input class="form-control" maxlength="15" placeholder="{{'PASSWORD' | translate}}"
-                                       formControlName="password" type="password">
-
-                                <p class="erros-msg"
-                                   *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
-                                    Password is Required</p>
-                                <p *ngIf="loginForm.get('password').hasError('invalidPassword')">Password must be at
-                                    least 8 characters long, contain a number and one special character.</p>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-6">
-                                    <!--<a href="#/register">{{'NEW-REG' | translate}}</a> -->
-                                </div>
-                                <div class="col-6 text-right">
-                                    <!--<a href="#">{{'F-Pass' | translate}}</a>-->
-                                </div>
-                            </div>
-                            <br>
-
-                            <button type="submit" [disabled]="loginForm.invalid"
-                                    class="btn btn-outline-primary btn-lg login_btn btn-block">{{'LOGIN' | translate}}
-                            </button>
-
-                        </form>
-                    </div>
-
+                        <div class="form-group">
+                            <label for="inputPassword">Password</label>
+                            <input formControlName="password" type="password" id="inputPassword" class="form-control"
+                                   placeholder=""
+                                   required>
+                            <p class="erros-msg"
+                               *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
+                                Password is Required</p>
+                            <p class="erros-msg"
+                               *ngIf="loginForm.get('password').hasError('invalidPassword')">Password must be at
+                                least 8 characters long, contain a number and one special character.</p>
+                        </div>
+                        <button class="btn btn-lg btn-outline-primary btn-outline-purple btn-block mtop_34"
+                                type="submit" [disabled]="loginForm.invalid">Login
+                        </button>
+                        <div class="clearfix"></div>
+                        <p class="alrdy_txt mtop_34">New account?<br/>
+                            <a href="#">Register here</a>
+                        </p>
+                    </form>
                 </div>
+
             </div>
         </div>
-
-
+        <!--Home Right Container Ends here-->
     </div>
+</div>
+<!--Home Footer Starts here-->
+<div class="home_footer"></div>
+<!--Home Footer Ends here-->
 
-    <!--
-        "HEADING": "MOH Insurance Login System",
-        "SUB-HEADING": "Customer eGov Payment Service Login",
-        "USERNAME": "Username",
-        "PASSWORD": "Password",
-        "NEW-REG": "New Registration",
-        "F-Pass": "Forgot Password?",
-        "INDIVIDUAL": "Individual",
-        "COMPANY": "Company",
-        "SERVICE-CENTER": "Service Center",
-        "MOI": "MOI",
-        "LOGIN": "LOGIN",
-        "REMEMBER": "Remember me",
-        "COPYRIGHT": "Copyright",
-        "COPYRIGHT2":"2018 All rights reserved."
-    -->
+

@@ -1,8 +1,8 @@
-package com.vfoexchange.platform.service;
+package com.vfoexchange.restServer.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.vfoexchange.platform.model.User;
+import com.vfoexchange.restServer.model.User;
 
 public interface UserService extends UserDetailsService {
 

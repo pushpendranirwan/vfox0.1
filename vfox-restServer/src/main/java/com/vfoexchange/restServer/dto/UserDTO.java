@@ -1,13 +1,4 @@
-package com.vfoexchange.platform.dto;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
-
-import com.vfoexchange.platform.dao.UserDao;
-import com.vfoexchange.platform.model.User;
+package com.vfoexchange.restServer.dto;
 
 public class UserDTO {
 

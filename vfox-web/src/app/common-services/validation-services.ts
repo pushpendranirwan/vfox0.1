@@ -38,12 +38,14 @@ export class ValidationService {
         }
     }
 
+
     static confirmPasswords(passwordKey: string, confirmPasswordKey: string) {
         return (group: FormGroup): { [key: string]: any } => {
             let password: any = group.controls[passwordKey];
             let confirmPassword: any = group.controls[confirmPasswordKey];
 
             if (password.value !== confirmPassword.value) {
+                console.log('sdfd')
                 return {
                     mismatchedPasswords: true
                 };

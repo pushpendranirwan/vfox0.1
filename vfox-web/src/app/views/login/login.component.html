@@ -2,7 +2,7 @@
     <!--Home Header Starts here-->
     <div class="d-flex flex-column flex-md-row align-items-center home_header">
         <h5 class="my-0 mr-md-auto"><img src="assets/img/vfox_logo.png" alt="VFOX"/></h5>
-        <a class="btn btn-outline-primary btn-outline-white" href="#">Sign In</a>
+        <a class="btn btn-outline-primary btn-outline-white" [routerLink]="['/home']">Register</a>
     </div>
     <!--Home Header Ends here-->
     <div class="row">
@@ -30,7 +30,7 @@
                                    required autofocus>
                             <p class="erros-msg"
                                *ngIf="loginForm.get('username').hasError('required') && loginForm.get('username').touched">
-                                Username is Required</p>
+                                Email is Required</p>
 
                             <p class="erros-msg"
                                *ngIf="loginForm.get('username').hasError('invalidEmailAddress')">Please enter valid
@@ -54,7 +54,7 @@
                         </button>
                         <div class="clearfix"></div>
                         <p class="alrdy_txt mtop_34">New account?<br/>
-                            <a href="#">Register here</a>
+                            <a [routerLink]="['/home']">Register here</a>
                         </p>
                     </form>
                 </div>

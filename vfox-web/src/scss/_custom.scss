@@ -25,6 +25,16 @@ body{background:#c03aa5 url(../assets/img/home_bg.jpg) no-repeat; background-siz
 .reg_card{width:265px; float:right;}
 .erros-msg{color:#ff0000; font-size:11px;}
 .reg_form button[disabled]{background:#fff!important; border:solid 1px #ce37a8!important; color:#ce37a8!important; opacity:0.3!important; cursor:auto!important;}
+.welcome_top{font-size:14px; font-weight:500; padding:0 8px 0 12px; margin-top:24px;}
+.top_nav{text-align:right; padding-top:70px!important;}
+.top_nav a{font-size:10px!important; color:#fff; font-weight:400; text-decoration:none;}
+.user_profile{position:relative; bottom:20px;}
+.home_footer a{position:relative; bottom:28px; text-decoration:none; padding:0 20px 0 20px; text-align:center; line-height:11px;}
+.ser_name{font-size:11px; color:#fff; font-weight:500; padding:10px 0 0 0;}
+.home_footer a img{height:60px; position:absolute; bottom:3px; left:50%; right:0; text-align:center; margin-left:0px; transition: all .2s ease-in-out; }
+.home_footer a:hover img{transform: scale(1.22); bottom:11px; left:50%;  margin-left:0px;}
+.pbtm_100{padding-bottom:100px;}
+
 
 @media screen and (max-width: 767px){
 body{height:100%;}
@@ -35,6 +45,8 @@ body{height:100%;}
 .home_txt{font-size:17px;}
 .home_video{margin-top:1.5rem;}
 .home_video img{display:block; margin:0 auto; width:100%;}
-.home_footer{position:inherit;}
 .reg_card{width:100%; float:none;}
+.top_nav{padding-top:0px!important; text-align:center!important;}
+.home_footer .row{flex-wrap:inherit!important;}
+.home_footer a img{height:30px!important;}
 }

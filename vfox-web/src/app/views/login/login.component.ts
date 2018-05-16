@@ -80,7 +80,7 @@ export class LoginComponent {
 
     );
   } else {
-    this.errorMsg = ' Username OR Password cannot be empty !';
+    this.errorMsg = ' Email OR Password cannot be empty !';
     this.error = true;
 }
 

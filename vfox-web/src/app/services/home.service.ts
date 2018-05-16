@@ -9,6 +9,14 @@ export class HomeService {
    }
 
 
+    register(username:string, password: String) {
+       return this.httpService.postLogin(this.configuration.API_LOGIN_URL, {
+         email: username,
+         password: password
+       });
+     }
+
+
   
 }
  

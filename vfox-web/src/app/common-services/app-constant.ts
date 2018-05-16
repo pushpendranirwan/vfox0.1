@@ -1,23 +1,23 @@
 export class Configuration {
-   
+
    // public Server: string = 'http://crystal.tekmindz.com/';
    // public Server: string = 'http://his.psc.com.kw/';
-   public Server: string = `http://192.168.10.60`; 
-    public ApiUrl: string = 'http://192.168.10.60/DEV/DSE/V.0.0.1/index.php/api/user/';
-    public HomePageUrl: string = 'home';  
-    
+    publicServer:string = `http://192.168.10.60`;
+    publicApiUrl:string = 'http://192.168.10.60/DEV/DSE/V.0.0.1/index.php/api/';
+    publicHomePageUrl:string = 'home';
+
     public HomeNavPageUrl: string = 'login';
 
     public AppMode: string = 'DEV'; //For PROD set 'PROD' mode;
     public ServerWithApiUrl = this.Server + this.ApiUrl;
- 
+
     public ADVISOR: string = 'Advisor';
     public ADMIN: string = 'Admin';
     public CLIENT: string = 'Client';
 
-    
-    public SESSION_TOKEN_REFRESH_TIME: number = 20000; 
-   
+
+    publicSESSION_TOKEN_REFRESH_TIME:number = 20000;
+
     public restrictedPageForAdmin: string[] = ['/dashboard/','/dashboard/servicecenter'];
     public restrictedPageForADVISOR: string[] = ['/dashboard/'];
     public restrictedPageForUser: string[] = ['/dashboard/'] ;
@@ -25,7 +25,8 @@ export class Configuration {
     public restrictedPageForCompany: string[] = ['/dashboard/home'];
      */
     //*****************************Api URLs *****************************/
-    public API_LOGIN_URL: string = 'login';
+public API_LOGIN_URL: string = 'user/login';
+public API_REGISTER_URL: string = 'visitor/createuser';
 
 
       //*****************************Api URLs Ends *****************************/

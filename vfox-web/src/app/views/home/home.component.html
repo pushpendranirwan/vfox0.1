@@ -22,6 +22,7 @@
             <div class="card reg_card">
                 <div class="card-body reg_form">
                     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div *ngIf="error" style="color:#ff9800">{{errorMsg}}</div>
                         <div class="form-group">
                             <label for="inputEmail">Email</label>
                             <input type="email" formControlName="username" id="inputEmail" class="form-control"
@@ -29,11 +30,11 @@
                                    required autofocus>
                             <p class="erros-msg"
                                *ngIf="registerForm.get('username').hasError('required') && registerForm.get('username').touched">
-                                Email is Required</p>
+                                Email is required</p>
 
                             <p class="erros-msg"
                                *ngIf="registerForm.get('username').hasError('invalidEmailAddress')">Please enter valid
-                                email address</p>
+                                email</p>
                         </div>
 
                         <div class="form-group">
@@ -43,7 +44,7 @@
                                    required>
                             <p class="erros-msg"
                                *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched">
-                                Password is Required</p>
+                                Password is required</p>
                             <p class="erros-msg"
                                *ngIf="registerForm.get('password').hasError('invalidPassword')">Password must be at
                                 least 8 characters long, contain a number and one special character.</p>
@@ -57,7 +58,7 @@
                                    required>
                             <p class="erros-msg"
                                *ngIf="registerForm.get('confirmPassword').hasError('required') && registerForm.get('confirmPassword').touched">
-                                Confirm Password is Required</p>
+                                Confirm Password is required</p>
                             <p class="erros-msg"
                                *ngIf="registerForm.hasError('mismatchedPasswords')">Password do not match</p>
                         </div>

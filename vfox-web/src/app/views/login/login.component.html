@@ -30,11 +30,11 @@
                                    required autofocus>
                             <p class="erros-msg"
                                *ngIf="loginForm.get('username').hasError('required') && loginForm.get('username').touched">
-                                Email is Required</p>
+                                Email is required</p>
 
                             <p class="erros-msg"
                                *ngIf="loginForm.get('username').hasError('invalidEmailAddress')">Please enter valid
-                                email address</p>
+                                email</p>
                         </div>
 
                         <div class="form-group">
@@ -44,7 +44,7 @@
                                    required>
                             <p class="erros-msg"
                                *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
-                                Password is Required</p>
+                                Password is required</p>
                             <p class="erros-msg"
                                *ngIf="loginForm.get('password').hasError('invalidPassword')">Password must be at
                                 least 8 characters long, contain a number and one special character.</p>

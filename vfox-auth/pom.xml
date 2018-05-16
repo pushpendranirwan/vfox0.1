@@ -9,9 +9,9 @@
 
     <parent>
         <groupId>com.vfoexchange</groupId>
-        <artifactId>vfox-parent</artifactId>
+        <artifactId>vfox</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../vfox-parent/pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <properties>

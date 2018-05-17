@@ -76,5 +76,30 @@ export class HomeComponent {
 
  
 
-
 }//class ends//
+
+
+@Component({
+    templateUrl: 'verifyemail.component.html'
+})
+
+
+export class VerifyEmailPageComponent {
+sub: any;
+verifyKey: string = '';
+
+  constructor(private route: ActivatedRoute ) {
+       //translate.setDefaultLang('en');
+
+                this.sub = this.route.params.subscribe(
+            (param: any) => {
+                this.verifyKey = param['key'];
+
+            });
+
+            console.log(this.verifyKey);
+
+     }
+
+
+}

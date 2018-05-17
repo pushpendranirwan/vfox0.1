@@ -1,23 +1,23 @@
-import{Injectable}from'@angular/core';
+import { Injectable } from '@angular/core';
 import 'rxjs/Rx';
-import {Configuration}from "../common-services/app-constant";
-import {Observable}from "rxjs/Observable";
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Http, Headers, Response, RequestOptions }from '@angular/http';
+import { Configuration } from "../common-services/app-constant";
+import { Observable } from "rxjs/Observable";
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class HttpService {
 apiUrl: string;
-headers: any;
-requestUrl: string;
-responseData: any;
-options: any;
-baseUrl: any;
+  headers: any;
+  requestUrl: string;
+  responseData: any;
+  options: any;
+  baseUrl: any;
 
-Login_Response: any;
+  Login_Response: any;
 
 
-constructor(private _http: HttpClient, private configuration: Configuration, private http: Http) {
+ constructor(private _http: HttpClient, private configuration: Configuration, private http: Http) {
     let myLocation = window.location.href;
 
   }
@@ -35,7 +35,7 @@ constructor(private _http: HttpClient, private configuration: Configuration, pri
       .catch(this.handleError);
   }
 
-put(url: string, data: any): Observable<any> {
+    put(url: string, data: any): Observable<any> {
     //debugger;
     let postUrl = this.configuration.ApiUrl + url;
     return this._http.put(postUrl, JSON.stringify(data), { headers: new HttpHeaders().set('Content-Type', 'application/json') })
@@ -43,6 +43,10 @@ put(url: string, data: any): Observable<any> {
       .catch(this.handleError);
   }
 
+  createTextPlainHeader() {
+    this.headers = new Headers();
+    this.headers.set('Content-Type', 'application/json');
+  }
 
   postLogin(url: string, data: any): Observable<any> {
     //debugger;
@@ -54,10 +58,13 @@ put(url: string, data: any): Observable<any> {
   }
 
 
-
-
-
-
+   putLogin(url: string):Observable<any>{
+    //for login
+    let getLoginUrl = this.configuration.ApiUrl +this.configuration.API_LOGIN_URL;
+    return this._http.post(getLoginUrl, {"username":"admin","password":"password@1","userType":"admin"}, { headers: new HttpHeaders().set('Content-Type', 'application/json') })
+     .map(this.extractData)
+     .catch(this.handleError);
+   }
 
   postWithoutLogin(url: string, data: any): Observable<any> {
     ////debugger;
@@ -80,7 +87,7 @@ putAfterLogin(url: string, data: any): Observable<any> {
     //.delay(2000) //Wait the response for 2 seconds
 
    }
-   
+
 
     postAfterLogin(url: string, data: any): Observable<any> {
       //debugger;
@@ -121,7 +128,7 @@ putAfterLogin(url: string, data: any): Observable<any> {
   // }
   this.headers.set("Accept", "application/json; charset=utf-8");
 
-  return this.http.post(postUrl, data, { 
+  return this.http.post(postUrl, data, {
     headers: this.headers
   })
     .map(this.extractData)

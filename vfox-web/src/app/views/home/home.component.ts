@@ -87,8 +87,12 @@ export class HomeComponent {
 export class VerifyEmailPageComponent {
 sub: any;
 verifyKey: string = '';
+error: boolean = false;
+   errorMsg: string = '';
 
-  constructor(private route: ActivatedRoute ) {
+  constructor(private route: ActivatedRoute, private router: Router, private translate: TranslateService, private homeService: HomeService,
+  private utilService : UtilService, private http: Http,private _toastrService: ToastrService
+    ) {
        //translate.setDefaultLang('en');
 
                 this.sub = this.route.params.subscribe(
@@ -98,8 +102,32 @@ verifyKey: string = '';
             });
 
             console.log(this.verifyKey);
+            this.verifyEmailCode();
 
      }
+
+
+    verifyEmailCode() {
+
+        //        console.log(this.verifyCode);
+        this.homeService.verifyEmail(this.verifyKey).subscribe(
+         (response) => {
+                if (response.statusCode === 200) {
+                   console.log('Register Response: ', response);
+                    this.router.navigate(['home']);
+                } else {
+                    this.errorMsg = response.message;
+                    this.error = true;
+                }
+            }, (error) => {
+           console.log('Registration error: ', error);
+           this.utilService.logError(error);
+           this.errorMsg = error;
+           this.error = true;
+         },
+         () => { console.log('Email verification Complete'); }
+            );
+    }
 
 
 }

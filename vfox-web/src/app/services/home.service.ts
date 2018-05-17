@@ -15,6 +15,12 @@ constructor(private httpService: HttpService, private configuration: Configurati
        });
      }
 
+    verifyEmail(emailKey:string) {
+       return this.httpService.post(this.configuration.API_REGISTER_URL, {
+         email: emailKey
+       });
+     }
+
 
   
 }

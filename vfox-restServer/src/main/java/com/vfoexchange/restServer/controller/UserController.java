@@ -1,13 +1,12 @@
 package com.vfoexchange.restServer.controller;
 
+import com.vfoexchange.restServer.dto.ResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.vfoexchange.restServer.model.User;
 import com.vfoexchange.restServer.service.UserService;
+import com.vfoexchange.restServer.dto.UserDTO;
 
 @RestController
 public class UserController {
@@ -16,9 +15,21 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value = "/add/user", method = RequestMethod.POST)
-    public String getAccountDetail(@RequestBody User user) {
-        userService.addUser(user);
-        return "OK";
+    @ResponseBody
+    public ResponseDTO getAccountDetail(@RequestBody UserDTO userDto) {
+        ResponseDTO resp = new ResponseDTO();
+        try {
+            User user = new User();
+            user.setUsername(userDto.getUsername());
+            user.setPassword(userDto.getPassword());
+            userService.addUser(user);
+            resp.setCode("200");
+            resp.setMsg("New user added successfully");
+        } catch (Exception e) {
+            resp.setCode("400");
+            resp.setMsg("Error occured while adding new user");
+        }
+        return resp;
     }
 
 }

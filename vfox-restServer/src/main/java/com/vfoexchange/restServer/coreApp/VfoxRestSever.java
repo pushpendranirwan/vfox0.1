@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @ComponentScan(basePackages = {"com.vfoexchange"})
 @PropertySources({@PropertySource(value = "classpath:application.properties")})
 @CrossOrigin(allowedHeaders = "*", allowCredentials = "true")
-@EnableResourceServer
-@Configuration
 public class VfoxRestSever {
 
     public static void main(String[] args) {

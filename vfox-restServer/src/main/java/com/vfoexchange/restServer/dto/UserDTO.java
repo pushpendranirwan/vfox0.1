@@ -2,17 +2,8 @@ package com.vfoexchange.restServer.dto;
 
 public class UserDTO {
 
-    private int id;
     private String username;
     private String password;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
@@ -29,7 +20,5 @@ public class UserDTO {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 }
 

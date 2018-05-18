@@ -17,8 +17,8 @@ public class UserDaoImpl implements UserDao {
     JdbcTemplate jdbcTemplate;
 
     public void add(User user) {
-        jdbcTemplate.update("INSERT INTO users (id, username, password) VALUES (?, ?, ?)",
-                user.getId(), user.getUsername(), user.getPassword());
+        jdbcTemplate.update("INSERT INTO User (UserName, Password, RoleId, PasswordSetDate, UserState, createdBy, CreatedAt, UpdatedBy, UpdatedAt) VALUES(?, ?, 2, now(), 'A', 1, now(), 1, now())",
+                user.getUsername(), user.getPassword());
     }
 
     public User find(int userId) {
@@ -29,7 +29,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User findByUsername(String username) {
-        User user = (User) jdbcTemplate.queryForObject("SELECT * FROM users where username = ? ",
+        User user = (User) jdbcTemplate.queryForObject("SELECT * FROM User where UserName = ? ",
                 new Object[]{username}, new BeanPropertyRowMapper<>(User.class));
         return user;
     }

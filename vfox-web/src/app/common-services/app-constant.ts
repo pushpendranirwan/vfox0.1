@@ -26,7 +26,7 @@ export class Configuration {
      */
     //*****************************Api URLs *****************************/
 public API_LOGIN_URL: string = 'user/auth';
-public API_REGISTER_URL: string = 'visitor/createuser';
+public API_REGISTER_URL: string = 'add/user';
 
 
       //*****************************Api URLs Ends *****************************/

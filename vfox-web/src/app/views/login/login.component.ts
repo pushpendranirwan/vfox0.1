@@ -51,8 +51,10 @@ export class LoginComponent {
         if(this.utilService.isEmpty(response)){
           this._toastrService.error("Please Enter Correct Username or Password", 'Oops!');
         }
-        if (response.statusCode === 200) { 
-          debugger;
+        response = response.json();
+
+        if (response.access_token) {
+
            let loginDataTest = {
                             role: "Admin",
                             roleId: 1,
@@ -61,8 +63,8 @@ export class LoginComponent {
           this.utilService.setData(loginDataTest, 'loginDataDetail');
           //set token and get profile
           //debugger;
-          localStorage.setItem('token', response.objectResponse.access_token);
-          console.log('Login Response: ', response);
+          localStorage.setItem('token', response.access_token);
+         // console.log('Login Response: ', response);
           this.router.navigate(['dashboard']);
         } else {
           this.errorMsg = response.message; //"Your username OR password is invalid !";

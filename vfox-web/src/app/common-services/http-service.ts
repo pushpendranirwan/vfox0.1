@@ -26,7 +26,7 @@ apiUrl: string;
 
   CONTEXT_PATH: string = '';
 
-
+    /*
    post(url: string, data: any): Observable<any> {
 
     var headers = new Headers({ "authorization": "Basic MTIzNDU2OmRmdmJhZWZ2YWRlZnZhYw=="});
@@ -40,17 +40,17 @@ apiUrl: string;
       .set('Content-Type', 'application/x-www-form-urlencoded') })
       .map(this.extractData)
       .catch(this.handleError);
-  }
+  } */
 
 
-/*
+
   post(url: string, data: any): Observable<any> {
     //debugger;
     let postUrl = this.configuration.ApiUrl + url;
     return this._http.post(postUrl, JSON.stringify(data), { headers: new HttpHeaders().set('Content-Type', 'application/json') })
       .map(this.extractData)
       .catch(this.handleError);
-  } */
+  }
 
     put(url: string, data: any): Observable<any> {
     //debugger;

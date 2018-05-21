@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../../common-services/auth-guard-service';
 import { DashboardComponent } from './dashboard.component';
 import { ServiceCenterComponent } from './service-center/service-center.component';
+import { InsuranceComponent } from './Insurance/insurance.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,14 @@ const routes: Routes = [
       data: {
       title: 'Service Center'
      }
-  }
+  },
+  {
+  path: 'insurance',
+component: InsuranceComponent,
+data: {
+title: 'Insurance'
+}
+}
   
 ];
 

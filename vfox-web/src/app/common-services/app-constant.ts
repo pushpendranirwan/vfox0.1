@@ -18,7 +18,7 @@ export class Configuration {
 
     public SESSION_TOKEN_REFRESH_TIME:number = 20000;
 
-    public restrictedPageForAdmin: string[] = ['/dashboard/','/dashboard/selectservices'];
+    public restrictedPageForAdmin: string[] = ['/dashboard/','/dashboard/selectservices','/dashboard/insurance'];
     public restrictedPageForADVISOR: string[] = ['/dashboard/'];
     public restrictedPageForUser: string[] = ['/dashboard/'] ;
      /*public restrictedPageForSC: string[] = ['/dashboard/home'];

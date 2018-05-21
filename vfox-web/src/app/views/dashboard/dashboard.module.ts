@@ -12,6 +12,7 @@ import { FileUploadModule } from "angular-file-uploader";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { ServiceCenterComponent } from './service-center/service-center.component';
+import { InsuranceComponent } from './Insurance/insurance.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import { ServiceCenterComponent } from './service-center/service-center.componen
     ReactiveFormsModule, ScModalModule, TranslateModule, FileUploadModule,
     NgbModule.forRoot()
   ],
-  declarations: [ DashboardComponent,  ServiceCenterComponent ]
+  declarations: [ DashboardComponent,  ServiceCenterComponent, InsuranceComponent  ]
 })
 export class DashboardModule {
 

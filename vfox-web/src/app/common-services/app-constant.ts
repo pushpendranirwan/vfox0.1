@@ -3,7 +3,7 @@ export class Configuration {
    // public Server: string = 'http://crystal.tekmindz.com/';
    // public Server: string = 'http://his.psc.com.kw/';
     public Server:string = `http://192.168.10.60`;
-    public ApiUrl:string = 'http://192.168.10.60/DEV/DSE/V.0.0.1/index.php/api/';
+    public ApiUrl:string = 'http://192.168.10.191:8889/';
     public HomePageUrl:string = 'home';
 
     public HomeNavPageUrl: string = 'login';
@@ -18,14 +18,14 @@ export class Configuration {
 
     public SESSION_TOKEN_REFRESH_TIME:number = 20000;
 
-    public restrictedPageForAdmin: string[] = ['/dashboard/','/dashboard/servicecenter'];
+    public restrictedPageForAdmin: string[] = ['/dashboard/','/dashboard/selectservices'];
     public restrictedPageForADVISOR: string[] = ['/dashboard/'];
     public restrictedPageForUser: string[] = ['/dashboard/'] ;
      /*public restrictedPageForSC: string[] = ['/dashboard/home'];
     public restrictedPageForCompany: string[] = ['/dashboard/home'];
      */
     //*****************************Api URLs *****************************/
-public API_LOGIN_URL: string = 'user/login';
+public API_LOGIN_URL: string = 'user/auth';
 public API_REGISTER_URL: string = 'visitor/createuser';
 
 

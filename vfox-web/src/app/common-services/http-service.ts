@@ -19,6 +19,7 @@ apiUrl: string;
 
  constructor(private _http: HttpClient, private configuration: Configuration, private http: Http) {
     let myLocation = window.location.href;
+    this.headers = new Headers();
 
   }
 
@@ -26,14 +27,30 @@ apiUrl: string;
   CONTEXT_PATH: string = '';
 
 
+   post(url: string, data: any): Observable<any> {
 
+    var headers = new Headers({ "authorization": "Basic MTIzNDU2OmRmdmJhZWZ2YWRlZnZhYw=="});
+     headers.set('Content-Type', 'application/x-www-form-urlencoded');
+    var options = new RequestOptions({ headers: headers });
+
+    //debugger;
+    let postUrl = this.configuration.ApiUrl + url;
+    return this._http.post(postUrl, data, { headers: new HttpHeaders()
+      .set("authorization", "Basic MTIzNDU2OmRmdmJhZWZ2YWRlZnZhYw==")
+      .set('Content-Type', 'application/x-www-form-urlencoded') })
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+
+/*
   post(url: string, data: any): Observable<any> {
     //debugger;
     let postUrl = this.configuration.ApiUrl + url;
     return this._http.post(postUrl, JSON.stringify(data), { headers: new HttpHeaders().set('Content-Type', 'application/json') })
       .map(this.extractData)
       .catch(this.handleError);
-  }
+  } */
 
     put(url: string, data: any): Observable<any> {
     //debugger;
@@ -50,8 +67,17 @@ apiUrl: string;
 
   postLogin(url: string, data: any): Observable<any> {
     //debugger;
+
+    this.headers = new Headers({
+
+      "authorization": "Basic MTIzNDU2OmRmdmJhZWZ2YWRlZnZhYw=="
+    });
+    this.headers.set('Content-Type', 'application/x-www-form-urlencoded');//application/x-www-form-urlencoded //application/json
+    //this.headers.append('Access-Control-Allow-Credentials', 'true');
+    this.options = new RequestOptions({ headers: this.headers });
+
     let postUrl = this.configuration.ApiUrl + url;
-    return this._http.post(postUrl, JSON.stringify(data), { headers: new HttpHeaders().set('Content-Type', 'application/json') })
+    return this.http.post(postUrl, data, this.options)
       .map(this.extractData)
       .catch(this.handleError);
 

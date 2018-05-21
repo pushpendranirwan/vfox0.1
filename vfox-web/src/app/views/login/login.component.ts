@@ -22,7 +22,12 @@ export class LoginComponent {
   constructor(private route: ActivatedRoute, private router: Router, private translate: TranslateService, private loginService: LoginService,
   private utilService : UtilService, private http: Http,private _toastrService: ToastrService
     ) { 
-       translate.setDefaultLang('en'); 
+       translate.setDefaultLang('en');
+        if (this.utilService.getData('loginDataDetail') !== null) {
+            if (this.utilService.getData('loginDataDetail').roleId.toString()) {
+                this.router.navigate(['dashboard']);
+            }
+        }
      }
 
   ngOnInit() {

@@ -15,7 +15,7 @@ const routes: Routes = [
     }
   },
   {
-      path: 'servicecenter',
+      path: 'selectservices',
       component: ServiceCenterComponent,
       data: {
       title: 'Service Center'

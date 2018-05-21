@@ -8,26 +8,22 @@ export class LoginService {
   constructor(private httpService: HttpService, private configuration: Configuration) {
    }
 
- /* login(username:string, password: string) { 
-
-    console.log('LOGIN Response', JSON.stringify({
-      username: username,
-      password: password
-    }));
-
-      return this.httpService.postWithoutLogin(this.configuration.API_LOGIN_URL, {
-        email: username,
-        password: password
-    });
-
-  } */
-
-  login(username:string, password: String) {
+ /* login(username:string, password: String) {
     return this.httpService.postLogin(this.configuration.API_LOGIN_URL, {
       email: username,
       password: password
     });
   }
+
+  login(username:string, password: String) {
+    let creds = 'grant_type=password&username='+username+'&password='+password+'&client_id=123456';
+    return this.httpService.postLogin(this.configuration.API_LOGIN_URL, {creds: creds
+    });
+  }*/
+
+login(username:string, password: String) {
+ let creds = 'grant_type=password&username='+username+'&password='+password+'&client_id=123456';
+  return this.httpService.postLogin(this.configuration.API_LOGIN_URL, creds);
+   }
   
 }
- 

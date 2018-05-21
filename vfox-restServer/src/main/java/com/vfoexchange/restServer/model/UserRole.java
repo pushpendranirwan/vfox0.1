@@ -9,8 +9,8 @@ import java.util.Collection;
 public class UserRole {
 
     private int id;
-    private String Role;
-    private String RoleState;
+    private String role;
+    private String roleState;
 
     public int getId() {
         return id;
@@ -21,18 +21,18 @@ public class UserRole {
     }
 
     public String getRole() {
-        return Role;
+        return role;
     }
 
     public void setRole(String role) {
-        Role = role;
+        role = role;
     }
 
     public String getRoleState() {
-        return RoleState;
+        return roleState;
     }
 
     public void setRoleState(String roleState) {
-        RoleState = roleState;
+        roleState = roleState;
     }
 }

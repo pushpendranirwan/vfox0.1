@@ -9,6 +9,7 @@ public class AuthConfig {
     private String authPath;
     private String clientId;
     private String clientSecret;
+    private int authTokenValidity;
 
 
     public String getClientId() {
@@ -33,6 +34,14 @@ public class AuthConfig {
 
     public void setAuthPath(String authPath) {
         this.authPath = authPath;
+    }
+
+    public int getAuthTokenValidity() {
+        return authTokenValidity;
+    }
+
+    public void setAuthTokenValidity(int authTokenValidity) {
+        this.authTokenValidity = authTokenValidity;
     }
 }
 

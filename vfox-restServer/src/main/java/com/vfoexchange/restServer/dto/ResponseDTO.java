@@ -4,6 +4,8 @@ public class ResponseDTO {
 
     private String code;
     private String msg;
+    private Object result;
+
 
     public String getCode() {
         return code;
@@ -19,6 +21,14 @@ public class ResponseDTO {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public Object getResult() {
+        return result;
+    }
+
+    public void setResult(Object result) {
+        this.result = result;
     }
 }
 

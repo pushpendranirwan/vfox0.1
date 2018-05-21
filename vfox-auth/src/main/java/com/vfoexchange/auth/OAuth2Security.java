@@ -41,12 +41,18 @@ public class OAuth2Security extends AuthorizationServerConfigurerAdapter {
         this.authenticationManager = authenticationManager;
     }
 
+    /*
+    Method to enable gratnt type as password for authentication and setting token validity
+     */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory().withClient(config.getClientId()).secret(config.getClientSecret()).authorizedGrantTypes("password")
-                .scopes("read", "write").accessTokenValiditySeconds(100);
+                .scopes("read", "write").accessTokenValiditySeconds(config.getAuthTokenValidity());
     }
 
+    /*
+    Method to override the authetication API path and including jwt token in spring security token store
+     */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.pathMapping("/oauth/token", config.getAuthPath());

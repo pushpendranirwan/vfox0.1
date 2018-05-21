@@ -28,6 +28,10 @@ public class UserServiceImpl implements UserService {
         return userDao.find(userId);
     }
 
+    /*
+    Method which overrides from org.springframework.security.core.userdetails.UserDetails,
+    responsible to search user from DB with supplied credentials
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userDao.findByUsername(username);

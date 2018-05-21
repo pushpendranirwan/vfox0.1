@@ -22,7 +22,12 @@ export class LoginComponent {
   constructor(private route: ActivatedRoute, private router: Router, private translate: TranslateService, private loginService: LoginService,
   private utilService : UtilService, private http: Http,private _toastrService: ToastrService
     ) { 
-       translate.setDefaultLang('en'); 
+       translate.setDefaultLang('en');
+        if (this.utilService.getData('loginDataDetail') !== null) {
+            if (this.utilService.getData('loginDataDetail').roleId.toString()) {
+                this.router.navigate(['dashboard']);
+            }
+        }
      }
 
   ngOnInit() {
@@ -46,8 +51,10 @@ export class LoginComponent {
         if(this.utilService.isEmpty(response)){
           this._toastrService.error("Please Enter Correct Username or Password", 'Oops!');
         }
-        if (response.statusCode === 200) { 
-          debugger;
+response = response.json();
+
+        if (response.access_token) {
+
            let loginDataTest = {
                             role: "Admin",
                             roleId: 1,
@@ -56,7 +63,7 @@ export class LoginComponent {
           this.utilService.setData(loginDataTest, 'loginDataDetail');
           //set token and get profile
           //debugger;
-          localStorage.setItem('token', response.objectResponse.access_token);
+          localStorage.setItem('token', response.access_token);
           console.log('Login Response: ', response);
           this.router.navigate(['dashboard']);
         } else {

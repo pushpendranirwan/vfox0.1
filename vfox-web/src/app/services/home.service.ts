@@ -10,7 +10,7 @@ constructor(private httpService: HttpService, private configuration: Configurati
 
     register(username:string, password: String) {
        return this.httpService.post(this.configuration.API_REGISTER_URL, {
-         email: username,
+         username: username,
          password: password
        });
      }

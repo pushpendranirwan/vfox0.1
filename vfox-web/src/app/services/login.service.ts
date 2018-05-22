@@ -16,13 +16,13 @@ export class LoginService {
   }
 
   login(username:string, password: String) {
-    let creds = 'grant_type=password&username='+username+'&password='+password+'&client_id=123456';
+    let creds = 'grant_type=password&username='+username+'&password='+password+'&client_id=123456
     return this.httpService.postLogin(this.configuration.API_LOGIN_URL, {creds: creds
     });
   }*/
 
 login(username:string, password: String) {
- let creds = 'grant_type=password&username='+username+'&password='+password+'&client_id=123456';
+ let creds = 'grant_type=password&username='+username+'&password='+password+'&client_id='+this.configuration.ClientId;
   return this.httpService.postLogin(this.configuration.API_LOGIN_URL, creds);
    }
   

@@ -51,7 +51,7 @@ export class LoginComponent {
         if(this.utilService.isEmpty(response)){
           this._toastrService.error("Please Enter Correct Username or Password", 'Oops!');
         }
-response = response.json();
+    response = response.json();
 
         if (response.access_token) {
 
@@ -67,8 +67,7 @@ response = response.json();
           console.log('Login Response: ', response);
           this.router.navigate(['dashboard']);
         } else {
-          this.errorMsg = response.message; //"Your username OR password is invalid !";
-          this.error = true;
+          this._toastrService.error( response.message, 'Oops!'); //"Your username OR password is invalid !";
           this.loginForm.reset();
           // (<FormControl>this.loginForm.controls['email']).setValue('');
           // (<FormControl>this.loginForm.controls['password']).setValue('');
@@ -77,18 +76,16 @@ response = response.json();
       },
 
       (error) => {
-        console.log('Login error: ', error);
+        this._toastrService.error("Something went wrong please try again", 'Oops!');
         this.utilService.logError(error);
-        this.errorMsg = error;
-        this.error = true;
+
       },
       () => { console.log('Login Complete'); }   
 
 
     );
   } else {
-    this.errorMsg = ' Email OR Password cannot be empty !';
-    this.error = true;
+    this._toastrService.error(" Email OR Password cannot be empty !", 'Oops!');
 }
 
   }

@@ -46,30 +46,27 @@ export class HomeComponent {
              this._toastrService.error("Something went wrong please try again", 'Oops!');
            }
            if (response.statusCode === 200) {
-
+            this._toastrService.success(response.message);
              console.log('Register Response: ', response);
-             this.router.navigate(['home']);
+             //this.router.navigate(['home']);
            } else {
-             this.errorMsg = response.message; //"Your username OR password is invalid !";
-             this.error = true;
+             this._toastrService.error(response.message, 'Oops!');
              this.registerForm.reset();
 
          }
          },
 
          (error) => {
-           console.log('Registration error: ', error);
+          this._toastrService.error("Something went wrong please try again", 'Oops!');
            this.utilService.logError(error);
-           this.errorMsg = error;
-           this.error = true;
          },
          () => { console.log('Registration Complete'); }
 
 
        );
      } else {
-       this.errorMsg = ' Email OR Password cannot be empty !';
-       this.error = true;
+        this._toastrService.error("Email OR Password cannot be empty !", 'Oops!');
+
    }
 
      }

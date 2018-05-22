@@ -70,8 +70,9 @@ apiUrl: string;
 
     this.headers = new Headers({
 
-      "authorization": "Basic MTIzNDU2OmRmdmJhZWZ2YWRlZnZhYw=="
+      "authorization": this.configuration.Authorization
     });
+
     this.headers.set('Content-Type', 'application/x-www-form-urlencoded');//application/x-www-form-urlencoded //application/json
     //this.headers.append('Access-Control-Allow-Credentials', 'true');
     this.options = new RequestOptions({ headers: this.headers });

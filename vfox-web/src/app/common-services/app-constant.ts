@@ -2,8 +2,11 @@ export class Configuration {
 
    // public Server: string = 'http://crystal.tekmindz.com/';
    // public Server: string = 'http://his.psc.com.kw/';
+    public ClientId: string = '123456';
+    public Authorization: string = 'Basic MTIzNDU2OmRmdmJhZWZ2YWRlZnZhYw==';
     public Server:string = `http://192.168.10.60`;
-    public ApiUrl:string = 'http://192.168.10.191:8889/';
+   // public ApiUrl:string = 'http://192.168.10.60:8889/';
+    public ApiUrl:string = 'http://192.0.0.20:7080/vfox/';
     public HomePageUrl:string = 'home';
 
     public HomeNavPageUrl: string = 'login';
@@ -25,8 +28,8 @@ export class Configuration {
     public restrictedPageForCompany: string[] = ['/dashboard/home'];
      */
     //*****************************Api URLs *****************************/
-public API_LOGIN_URL: string = 'user/auth';
-public API_REGISTER_URL: string = 'add/user';
+    public API_LOGIN_URL: string = 'user/auth';
+    public API_REGISTER_URL: string = 'add/user';
 
 
       //*****************************Api URLs Ends *****************************/

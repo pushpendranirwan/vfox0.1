@@ -10,6 +10,7 @@ public class AuthConfig {
     private String clientId;
     private String clientSecret;
     private int authTokenValidity;
+    private String keyStorePassword;
 
 
     public String getClientId() {
@@ -42,6 +43,14 @@ public class AuthConfig {
 
     public void setAuthTokenValidity(int authTokenValidity) {
         this.authTokenValidity = authTokenValidity;
+    }
+
+    public String getKeyStorePassword() {
+        return keyStorePassword;
+    }
+
+    public void setKeyStorePassword(String keyStorePassword) {
+        this.keyStorePassword = keyStorePassword;
     }
 }
 

@@ -16,6 +16,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserDao userDao;
 
+    /*
+    Method for encoding password before inserting in db and adding user as per new registration
+     */
     public void addUser(User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(user.getPassword());

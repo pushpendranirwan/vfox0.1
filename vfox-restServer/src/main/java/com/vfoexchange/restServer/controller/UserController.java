@@ -14,6 +14,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    /*
+    Method for adding new user(as of now only for adviser, later should be moved to generic one)
+     */
     @RequestMapping(value = "/add/user", method = RequestMethod.POST)
     @ResponseBody
     public ResponseDTO getAccountDetail(@RequestBody UserDTO userDto) {

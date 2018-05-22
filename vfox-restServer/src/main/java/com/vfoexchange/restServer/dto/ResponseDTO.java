@@ -5,6 +5,7 @@ public class ResponseDTO {
     private String code;
     private String msg;
     private Object result;
+    private int resultSize;
 
 
     public String getCode() {
@@ -29,6 +30,14 @@ public class ResponseDTO {
 
     public void setResult(Object result) {
         this.result = result;
+    }
+
+    public int getResultSize() {
+        return resultSize;
+    }
+
+    public void setResultSize(int resultSize) {
+        this.resultSize = resultSize;
     }
 }
 

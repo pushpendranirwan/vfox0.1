@@ -16,6 +16,9 @@ public class UserDaoImpl implements UserDao {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    /*
+    Method to add new user(as of now only for adviser registration, later should be moved to generic one)
+     */
     public void add(User user) {
         jdbcTemplate.update("INSERT INTO User (UserName, Password, RoleId, PasswordSetDate, UserState, createdBy, CreatedAt, UpdatedBy, UpdatedAt) VALUES(?, ?, 2, now(), 'A', 1, now(), 1, now())",
                 user.getUsername(), user.getPassword());

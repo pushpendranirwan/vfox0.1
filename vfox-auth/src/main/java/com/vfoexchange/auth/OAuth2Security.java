@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -24,8 +23,6 @@ import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFacto
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @Import(ServerSecurityConfig.class)
 public class OAuth2Security extends AuthorizationServerConfigurerAdapter {
-    @Autowired
-    private Environment environment;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -51,7 +48,7 @@ public class OAuth2Security extends AuthorizationServerConfigurerAdapter {
     }
 
     /*
-    Method to override the authetication API path and including jwt token in spring security token store
+    Method to override the authentication API path and including jwt token in spring security token store
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
@@ -72,9 +69,8 @@ public class OAuth2Security extends AuthorizationServerConfigurerAdapter {
 
     @Bean
     protected JwtAccessTokenConverter jwtTokenEnhancer() {
-        String pwd = environment.getProperty("keystore.password");
         KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("jwt.jks"),
-                pwd.toCharArray());
+                config.getKeyStorePassword().toCharArray());
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         converter.setKeyPair(keyStoreKeyFactory.getKeyPair("jwt"));
         return converter;

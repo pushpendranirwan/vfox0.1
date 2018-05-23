@@ -26,7 +26,9 @@ export class DefaultLayoutComponent {
       attributes: true
     });
   }
+  isCreatingAccount: boolean = true;
    ngOnInit(){
+    setTimeout(() => { this.isCreatingAccount = false; }, 2000);
     this.translate.setDefaultLang('en');
   }
 

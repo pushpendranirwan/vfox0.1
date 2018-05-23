@@ -1,4 +1,7 @@
-<div class="container">
+<div class="loading" *ngIf="isCreatingAccount">
+    <h1><img src="assets/img/loading.png" class="img-fluid"/></h1>
+</div>
+<div class="container" *ngIf="!isCreatingAccount">
     <!--Home Header Starts here-->
     <div class="d-flex flex-column flex-md-row align-items-center home_header">
         <h5 class="my-0 mr-md-auto"><img src="assets/img/vfox_logo.png" alt="VFOX"/></h5>
@@ -22,7 +25,7 @@
     </div>
 </div>
 <!--Home Footer Starts here-->
-<div class="foot_scroll">
+<div class="foot_scroll" *ngIf="!isCreatingAccount">
     <div class="home_footer">
         <div class="container-fluid">
             <div class="row">

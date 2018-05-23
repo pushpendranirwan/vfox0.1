@@ -52,11 +52,14 @@ body{background:#c03aa5 url(../assets/img/home_bg.jpg) no-repeat; background-siz
 .mbtm_37{margin-bottom:37px;}
 .started_bg .form-group{margin-bottom:4px;}
 .home_footer a.active img{transform: scale(1.22); bottom:11px; left:50%;  margin-left:0px;}
-.loading {background: url(../assets/img/animate_bg.png) no-repeat 25px 50px; opacity: 0; position: fixed; height: 100%; width: 100%; padding-top: 20vh; text-align: center; z-index: -1; -webkit-transition: opacity 4s ease-out; transition: opacity 4s ease-out; font-size:14px; position: relative;
--webkit-animation: mymove 1s;  /* Safari 4.0 - 8.0 */ -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */ animation: mymove 1s; animation-fill-mode: forwards; }
-@-webkit-keyframes mymove {from {top: 0px;} to {top: 60px;}}
-@keyframes mymove {from {top: 0px;}to {top: 60px;}}
-app-root:empty + .loading {opacity: 1; z-index: 100;
+.loading {background: url(../assets/img/animate_bg.png) no-repeat 25px 50px; opacity: 1; position: fixed; height: 100%; width: 100%; padding-top: 20vh; text-align: center; z-index: -1; -webkit-transition: opacity 3s ease-out; transition: opacity 3s ease-out; font-size:14px; position: relative;
+-webkit-animation: mymove 3s;  /* Safari 4.0 - 8.0 */ -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */ animation: mymove 3s; animation-fill-mode: forwards;}
+@-webkit-keyframes mymove {from {top: 0px; opacity:0;} to {top: 60px; opacity:1;}}
+@keyframes mymove {0% {top: 0px; opacity:0;}25% {top: 60px; opacity:1;} 50% {top: 60px; opacity:1;}100% {top: 0px; opacity:0;}}
+.loading {opacity: 1; z-index: 100;
+  h1 {font-family: 'Quicksand', sans-serif; color: #EEE; margin-bottom: 50px;
+  }
+//app-root:empty + .loading {opacity: 1; z-index: 100;
   h1 {font-family: 'Quicksand', sans-serif; color: #EEE; margin-bottom: 50px;
   }
 }

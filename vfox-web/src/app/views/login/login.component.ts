@@ -51,7 +51,7 @@ export class LoginComponent {
         if(this.utilService.isEmpty(response)){
           this._toastrService.error("Please Enter Correct Username or Password", 'Oops!');
         }
-    response = response.json();
+        response = response.json();
 
         if (response.access_token) {
 

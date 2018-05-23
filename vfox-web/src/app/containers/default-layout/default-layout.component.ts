@@ -36,20 +36,10 @@ export class DefaultLayoutComponent {
     this.translateService.translateLang(language, userType);
   } 
 logout() {
-    debugger;
     //this.token = undefined;
     localStorage.removeItem('token');
-    localStorage.removeItem('loginusername');
-    localStorage.removeItem('loginpassword');
     localStorage.removeItem('loginDataDetail');
-   
-    // localStorage.removeItem('token_expires_at');
-    // localStorage.removeItem('token_expire_msg');
-    // localStorage.removeItem('token_requested'); //Added
-    // localStorage.removeItem('cpassword');
-    // localStorage.removeItem('userid');
-    // localStorage.removeItem('fullname');
-    // TO DO HTTP client clear this.httpclient.headers.delete('X-Auth-Token');
+
     localStorage.clear();
      this.router.navigate(['/']);
     //this.signOut();

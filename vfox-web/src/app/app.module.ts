@@ -52,6 +52,7 @@ import { AuthGuard } from "./common-services/auth-guard-service";
 //import { SearchService } from "./services/search.service";
 //import { RegisterService } from "./services/register.service";
 import { HomeService } from "./services/home.service";
+import { ProvidersService } from "./services/providers.service";
 //import { PaymentService } from "./services/payment.service";
 //import { PrintService } from "./services/report.service";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
@@ -114,6 +115,7 @@ import { TranslateLangService } from "./services/translate.service";
     Authentication,
     AuthGuard,
     HomeService,
+    ProvidersService,
     TranslateLangService],
   bootstrap: [ AppComponent ]
 })

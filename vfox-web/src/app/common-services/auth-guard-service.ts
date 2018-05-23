@@ -19,13 +19,13 @@ export class AuthGuard implements CanActivateChild {
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-     debugger;
+   //  debugger;
     let url = '/dashboard/' + route.routeConfig.path.split('/:')[0];
     return this.checkLogin(url);
   }
 
   checkLogin(currentStat: any): boolean {
-     debugger;
+    // debugger;
    let restrictedPageForAdmin: string[] = this.configuration.restrictedPageForAdmin;
     let restrictedPageForADVISOR: string[] = this.configuration.restrictedPageForADVISOR;
     let restrictedPageForUser: string[] = this.configuration.restrictedPageForUser;

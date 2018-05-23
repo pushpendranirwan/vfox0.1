@@ -30,6 +30,7 @@ export class Configuration {
     //*****************************Api URLs *****************************/
     public API_LOGIN_URL: string = 'user/auth';
     public API_REGISTER_URL: string = 'add/user';
+    public API_SERVICE_PROVIDER: string = 'get/serviceProviders';
 
 
       //*****************************Api URLs Ends *****************************/

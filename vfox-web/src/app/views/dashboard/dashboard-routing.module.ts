@@ -9,7 +9,7 @@ import { InsuranceComponent } from './Insurance/insurance.component';
 const routes: Routes = [
    {
     path: '',
-    component: DashboardComponent,  
+    component: DashboardComponent,
     pathMatch:'full',
     data: {
       title: 'Dashboard'
@@ -23,13 +23,13 @@ const routes: Routes = [
      }
   },
   {
-  path: 'insurance',
-component: InsuranceComponent,
-data: {
-title: 'Insurance'
-}
-}
-  
+      path: 'insurance',
+      component: InsuranceComponent,
+      data: {
+      title: 'Insurance'
+     }
+  }
+
 ];
 
 @NgModule({

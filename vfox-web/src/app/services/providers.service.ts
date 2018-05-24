@@ -9,9 +9,9 @@ constructor(private httpService: HttpService, private configuration: Configurati
    }
 
 
-serviceProviders(serviceType:string) {
-  var url = this.configuration.API_SERVICE_PROVIDER+'?serviceName='+serviceType;
-  return this.httpService.get(url);
+    serviceProviders(serviceType:string) {
+    var url = this.configuration.API_SERVICE_PROVIDER+'?serviceName='+serviceType;
+    return this.httpService.get(url);
    }
   
 }

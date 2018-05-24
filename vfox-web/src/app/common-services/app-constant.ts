@@ -14,19 +14,21 @@ export class Configuration {
     public AppMode: string = 'DEV'; //For PROD set 'PROD' mode;
     public ServerWithApiUrl = this.Server + this.ApiUrl;
 
+    //*****************************User Roles *****************************/
     public ADVISOR: string = 'Advisor';
     public ADMIN: string = 'Admin';
     public CLIENT: string = 'Client';
 
 
     public SESSION_TOKEN_REFRESH_TIME:number = 20000;
-
+    //*****************************URL Access Permission *****************************/
     public restrictedPageForAdmin: string[] = ['/dashboard/','/dashboard/selectservices','/dashboard/insurance'];
     public restrictedPageForADVISOR: string[] = ['/dashboard/'];
     public restrictedPageForUser: string[] = ['/dashboard/'] ;
      /*public restrictedPageForSC: string[] = ['/dashboard/home'];
     public restrictedPageForCompany: string[] = ['/dashboard/home'];
      */
+
     //*****************************Api URLs *****************************/
     public API_LOGIN_URL: string = 'user/auth';
     public API_REGISTER_URL: string = 'add/user';
@@ -48,6 +50,7 @@ export class Configuration {
     public PHONE_REGEX: string = '^[0-9-+]*$';
     public ALPHABETS_REGEX: string = '^[ a-zA-Z]*$';
 
+//*****************************User Roles *****************************/
     public RolesList = [
         {
             key: 'ADMIN',

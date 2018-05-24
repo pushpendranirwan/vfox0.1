@@ -25,8 +25,8 @@ export class HomeComponent {
      }
 
   ngOnInit() {
-    var formBuilder = new FormBuilder();
-    this.registerForm = formBuilder.group({
+      var formBuilder = new FormBuilder();
+      this.registerForm = formBuilder.group({
 
       username: new FormControl(null, [Validators.required, ValidationService.emailValidator]),
       password: new FormControl(null, [Validators.required, ValidationService.passwordValidator, Validators.minLength(8)]),

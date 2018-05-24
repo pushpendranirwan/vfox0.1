@@ -9,7 +9,7 @@ export class Configuration {
     public ApiUrl:string = 'http://192.0.0.20:7080/vfox/';
     public HomePageUrl:string = 'home';
 
-    public HomeNavPageUrl: string = 'login';
+    public HomeNavPageUrl: string = '/#/login';
 
     public AppMode: string = 'DEV'; //For PROD set 'PROD' mode;
     public ServerWithApiUrl = this.Server + this.ApiUrl;

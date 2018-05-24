@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivateChild {
   }
 
   checkLogin(currentStat: any): boolean {
-    // debugger;
+     debugger;
    let restrictedPageForAdmin: string[] = this.configuration.restrictedPageForAdmin;
     let restrictedPageForADVISOR: string[] = this.configuration.restrictedPageForADVISOR;
     let restrictedPageForUser: string[] = this.configuration.restrictedPageForUser;
@@ -69,7 +69,7 @@ export class AuthGuard implements CanActivateChild {
              console.log('Selectd Role Not Defined');
          }
        }
-     } else { window.location.href = this.baseUrl + this.configuration.HomePageUrl; }
+     } else { window.location.href = this.baseUrl + this.configuration.HomeNavPageUrl; }
 
     // alert(localStorage.getItem('role'));
     // alert('resPage---' + resPage);
@@ -81,7 +81,7 @@ export class AuthGuard implements CanActivateChild {
       //alert('in');
       this.auth.logout();
       //this.router.navigate(['login']);
-      window.location.href = this.baseUrl + this.configuration.HomePageUrl;
+      window.location.href = this.baseUrl + this.configuration.HomeNavPageUrl;
       return false;
     } else {
       //  alert('out');

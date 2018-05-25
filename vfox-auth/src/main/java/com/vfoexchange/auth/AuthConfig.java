@@ -3,6 +3,9 @@ package com.vfoexchange.auth;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+/*
+Configurable properties related to auth security
+ */
 @Component
 @ConfigurationProperties(prefix = "security.oauth2")
 public class AuthConfig {

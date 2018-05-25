@@ -12,6 +12,10 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+/*
+Database connection using DataSource and JdbcTemplate
+with configurable database properties
+ */
 @Configuration
 @ComponentScan(basePackages = "com.vfoexchange")
 @PropertySource(value = {"classpath:application.properties"})

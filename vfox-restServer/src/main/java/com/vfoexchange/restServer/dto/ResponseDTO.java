@@ -1,5 +1,8 @@
 package com.vfoexchange.restServer.dto;
 
+/*
+Specifying the generic response structure of rest API's
+ */
 public class ResponseDTO {
 
     private String code;

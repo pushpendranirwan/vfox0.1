@@ -6,6 +6,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
+/*
+Enabling to access resource pool with oauth2 token
+ */
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
@@ -17,6 +20,9 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         resources.resourceId(RESOURCE_ID).stateless(false);
     }
 
+    /*
+    Specifying url patterns with enable/disable authentication
+     */
     @Override
     public void configure(HttpSecurity http) throws Exception {
 

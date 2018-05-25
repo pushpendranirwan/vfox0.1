@@ -18,6 +18,9 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
+/*
+Configuring spring oauth2 security
+ */
 @Configuration
 @EnableAuthorizationServer
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -67,6 +70,9 @@ public class OAuth2Security extends AuthorizationServerConfigurerAdapter {
         return new JwtTokenStore(jwtTokenEnhancer());
     }
 
+    /*
+    Creating jwt token using .jks file in resources and keystore password
+     */
     @Bean
     protected JwtAccessTokenConverter jwtTokenEnhancer() {
         KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("jwt.jks"),

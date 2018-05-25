@@ -1,18 +1,13 @@
 export class Configuration {
 
-   // public Server: string = 'http://crystal.tekmindz.com/';
-   // public Server: string = 'http://his.psc.com.kw/';
+    //*****************************API Auth *****************************/
     public ClientId: string = '123456';
     public Authorization: string = 'Basic MTIzNDU2OmRmdmJhZWZ2YWRlZnZhYw==';
-    public Server:string = `http://192.168.10.60`;
-   // public ApiUrl:string = 'http://192.168.10.60:8889/';
-    public ApiUrl:string = 'http://192.0.0.20:7080/vfox/';
-    public HomePageUrl:string = 'home';
 
+    public ApiUrl:string = 'http://192.0.0.20:7080/vfox/';
     public HomeNavPageUrl: string = '/#/login';
 
     public AppMode: string = 'DEV'; //For PROD set 'PROD' mode;
-    public ServerWithApiUrl = this.Server + this.ApiUrl;
 
     //*****************************User Roles *****************************/
     public ADVISOR: string = 'Advisor';
@@ -25,9 +20,7 @@ export class Configuration {
     public restrictedPageForAdmin: string[] = ['/dashboard/','/dashboard/selectservices','/dashboard/insurance'];
     public restrictedPageForADVISOR: string[] = ['/dashboard/'];
     public restrictedPageForUser: string[] = ['/dashboard/'] ;
-     /*public restrictedPageForSC: string[] = ['/dashboard/home'];
-    public restrictedPageForCompany: string[] = ['/dashboard/home'];
-     */
+
 
     //*****************************Api URLs *****************************/
     public API_LOGIN_URL: string = 'user/auth';

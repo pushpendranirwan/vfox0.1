@@ -41,14 +41,11 @@ export class HomeComponent {
        if (obj.username !== '' || obj.password !== '') {
        this.homeService.register(obj.username, obj.password).subscribe(
          (response) => {
-          // console.log('Type Of Response 2: ',this.utilService.isEmpty(response));
            if(this.utilService.isEmpty(response)){
              this._toastrService.error("Something went wrong please try again", 'Oops!');
            }
            if (response.statusCode === 200) {
             this._toastrService.success(response.message);
-             console.log('Register Response: ', response);
-             //this.router.navigate(['home']);
            } else {
              this._toastrService.error(response.message, 'Oops!');
              this.registerForm.reset();
@@ -60,7 +57,7 @@ export class HomeComponent {
           this._toastrService.error("Something went wrong please try again", 'Oops!');
            this.utilService.logError(error);
          },
-         () => { console.log('Registration Complete'); }
+         () => {  }
 
 
        );
@@ -110,7 +107,6 @@ error: boolean = false;
         this.homeService.verifyEmail(this.verifyKey).subscribe(
          (response) => {
                 if (response.statusCode === 200) {
-                   console.log('Register Response: ', response);
                     this.router.navigate(['home']);
                 } else {
                     this.errorMsg = response.message;
@@ -122,7 +118,7 @@ error: boolean = false;
            this.errorMsg = error;
            this.error = true;
          },
-         () => { console.log('Email verification Complete'); }
+         () => {  }
             );
     }
 

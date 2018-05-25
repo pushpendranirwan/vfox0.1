@@ -47,11 +47,7 @@ apiUrl: string;
     get(url: string): Observable<any> {
  debugger
  let getUrl = this.configuration.ApiUrl + url;
-  /*  this.headers = new Headers({
-      "Content-Type": "application/json",
-      'Authorization': 'Bearer ' + localStorage.getItem('token')
-    });
-    this.options = new RequestOptions({ headers: this.headers }); */
+
 
     this.headers = new Headers({ 
       
@@ -60,28 +56,6 @@ apiUrl: string;
     this.options = new RequestOptions({ headers: this.headers });
     return this.http.get(getUrl, this.options)
       .map(res => res.json());
-
-
-/*
-      this.headers = new Headers({
-      "authorization": 'Bearer ' + localStorage.getItem('token')
-    });
-
-    // console.log(this.headers);
-
-    //this.headers.set('Content-Type', 'application/json'); //application/json
-    //this.headers.append('Content-Type1', 'application/json');
-    //this.headers.append('Access-Control-Allow-Credentials', 'true');
-    this.options = new RequestOptions({ headers: this.headers });
-    console.log(this.options);
-    let postUrl = this.configuration.ApiUrl + url;
-    return this.http.get(getUrl, this.options)
-      .map(this.extractData)
-      .catch(this.handleError); */
-
-    //return this.http.get(getUrl, this.options)
-     // .map(res => res.json());
-
 
 }
 

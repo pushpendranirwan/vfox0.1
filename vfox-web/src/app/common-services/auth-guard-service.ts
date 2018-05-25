@@ -19,39 +19,26 @@ export class AuthGuard implements CanActivateChild {
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-   //  debugger;
+
     let url = '/dashboard/' + route.routeConfig.path.split('/:')[0];
     return this.checkLogin(url);
   }
 
   checkLogin(currentStat: any): boolean {
-     debugger;
+
    let restrictedPageForAdmin: string[] = this.configuration.restrictedPageForAdmin;
     let restrictedPageForADVISOR: string[] = this.configuration.restrictedPageForADVISOR;
     let restrictedPageForUser: string[] = this.configuration.restrictedPageForUser;
-    /*  let restrictedPageForSC: string[] = this.configuration.restrictedPageForSC;
-    let restrictedPageForUser: string[] = this.configuration.restrictedPageForUser; */
+
     let resPage: boolean;
 
     let currentPath = currentStat.split(';')[0];
     
-    //only for test role
-    //    public ADMIN_ROLE_ID: string = '5';
-    // public MOI_ROLE_ID: string = '4';
-    // public Company_ROLE_ID: string = '3';
-    // public SC_ROLE_ID: string = '2';
-    // public USER_ROLE_ID: string = '1';
-    //  let loginDataTest = {
-        
-    //       roleId: 1
-    //   }
-    //   this.utilService.setData(loginDataTest, 'loginDataDetail');
 
      if (this.utilService.getData('loginDataDetail') !== null) {
        if (this.utilService.getData('loginDataDetail').roleId.toString()) {
          switch (this.utilService.getData('loginDataDetail').roleId.toString()) {
            case this.configuration.ADMIN_ROLE_ID:
-               //alert('restrictedPageForAdmin---'+restrictedPageForAdmin);
              resPage = restrictedPageForAdmin.indexOf(currentPath) === -1;
              break;
            
@@ -66,33 +53,25 @@ export class AuthGuard implements CanActivateChild {
              break;
            
            default:
-             console.log('Selectd Role Not Defined');
+             //console.log('Selectd Role Not Defined');
          }
        }
      } else { window.location.href = this.baseUrl + this.configuration.HomeNavPageUrl; }
 
-    // alert(localStorage.getItem('role'));
-    // alert('resPage---' + resPage);
     if (this.utilService.getData('loginDataDetail').roleId === '' || this.utilService.getData('loginDataDetail').roleId === null || this.utilService.getData('loginDataDetail').roleId === undefined) {
       this.router.navigate(['login']);
     }
 
     if (resPage && this.utilService.getData('loginDataDetail').roleId) {
-      //alert('in');
+
       this.auth.logout();
-      //this.router.navigate(['login']);
+
       window.location.href = this.baseUrl + this.configuration.HomeNavPageUrl;
       return false;
     } else {
-      //  alert('out');
+
       return true;
     }
 
-    // if (resPage && localStorage.getItem('token')) {
-    //   this.router.navigate(['Login']);
-    //   return false;
-    // } else {
-    //   return true;
-    // }
   }
 }

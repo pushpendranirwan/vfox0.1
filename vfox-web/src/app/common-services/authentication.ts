@@ -14,21 +14,9 @@ export class Authentication {
     this.token = localStorage.getItem('token');
   }
 
- 
+
   logout() {
-    //this.token = undefined;
-    localStorage.removeItem('token');
-    localStorage.removeItem('role');
-    localStorage.removeItem('username');
-    localStorage.removeItem('uname');
-    localStorage.removeItem('token_expires_at');
-    localStorage.removeItem('token_expire_msg');
-    localStorage.removeItem('token_requested'); //Added
-    localStorage.removeItem('cpassword');
-    localStorage.removeItem('userid');
-    localStorage.removeItem('fullname');
-    // TO DO HTTP client clear this.httpclient.headers.delete('X-Auth-Token');
-    localStorage.clear();
+        localStorage.clear();
         //this.signOut();
     return Observable.of(true);
 

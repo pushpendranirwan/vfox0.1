@@ -10,21 +10,13 @@ import { Configuration } from "../../common-services/app-constant";
   templateUrl: './default-layout.component.html'
 })
 export class DefaultLayoutComponent {
-  public sidebarMinimized = true;
-  private changes: MutationObserver;
-  public element: HTMLElement = document.body;
+
    userType: string = '';
   constructor(private utilService: UtilService,private router:Router,
 	private configuration:Configuration, private translate: TranslateService, private translateService: TranslateLangService) {
-    this.userType = 'Company';
-    
-    this.changes = new MutationObserver((mutations) => {
-      this.sidebarMinimized = document.body.classList.contains('sidebar-minimized')
-    });
 
-    this.changes.observe(<Element>this.element, {
-      attributes: true
-    });
+    
+
   }
   isCreatingAccount: boolean = true;
    ngOnInit(){
@@ -42,8 +34,7 @@ logout() {
 
     localStorage.clear();
      this.router.navigate(['/']);
-    //this.signOut();
-   // return Observable.of(true);
+
 
   }
 }

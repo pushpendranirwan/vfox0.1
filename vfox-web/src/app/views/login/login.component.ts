@@ -37,17 +37,12 @@ export class LoginComponent {
     });
   }
 
- /* switchLanguage(language: string) {
-    this.translate.use(language); 
-  }  */
 
-   
   onSubmit() {  
     let obj = this.loginForm.value;   
     if (obj.username !== '' || obj.password !== '') {
     this.loginService.login(obj.username, obj.password).subscribe(
       (response) => {
-       // console.log('Type Of Response 2: ',this.utilService.isEmpty(response));
         if(this.utilService.isEmpty(response)){
           this._toastrService.error("Please Enter Correct Username or Password", 'Oops!');
         }
@@ -62,15 +57,13 @@ export class LoginComponent {
                         }
           this.utilService.setData(loginDataTest, 'loginDataDetail');
           //set token and get profile
-          //debugger;
+
           localStorage.setItem('token', response.access_token);
-          console.log('Login Response: ', response);
+
           this.router.navigate(['dashboard']);
         } else {
           this._toastrService.error( response.message, 'Oops!'); //"Your username OR password is invalid !";
           this.loginForm.reset();
-          // (<FormControl>this.loginForm.controls['email']).setValue('');
-          // (<FormControl>this.loginForm.controls['password']).setValue('');
 
       }    
       },
@@ -80,7 +73,7 @@ export class LoginComponent {
         this.utilService.logError(error);
 
       },
-      () => { console.log('Login Complete'); }   
+      () => { }
 
 
     );

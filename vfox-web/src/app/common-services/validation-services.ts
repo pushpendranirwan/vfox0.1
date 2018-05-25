@@ -31,7 +31,7 @@ export class ValidationService {
         // (?=.*[0-9])       - Assert a string has at least one number
         if (control.value === null || control.value === undefined || control.value === '') {
             return null;
-        } else if (control.value.match(/^(?=.*[0-9])(?=.*[@#$%*_])[a-zA-Z0-9@#$%*_]{8,15}$/)) {
+        } else if (control.value.match(/^(?=.*[0-9])(?=.*[ !#$%&'()*+,-./:;<=>?@[\]^_`{|}~])[a-zA-Z0-9 !#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,15}$/)) {
             return null;
         } else {
             return { 'invalidPassword': true };

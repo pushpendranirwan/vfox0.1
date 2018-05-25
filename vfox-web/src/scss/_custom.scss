@@ -34,7 +34,7 @@ body{background:#c03aa5 url(../assets/img/home_bg.jpg) no-repeat; background-siz
 .home_footer a img{height:60px; position:absolute; top:-45px; left:50%; right:0; text-align:center; margin-left:0px; transition: all .2s ease-in-out; }
 .home_footer a:hover img{transform: scale(1.22); top:-53px; left:50%;  margin-left:0px;}
 .pbtm_100{padding-bottom:100px;}
-.disable_link{opacity:0.2; cursor:auto;}
+.disable_link img, .disable_link .ser_name{opacity:0.2; cursor:auto; -webkit-opacity: 0.2;}
 .home_footer a.disable_link img{transition:none!important;}
 .home_footer a.disable_link:hover img{transform:inherit!important; top:-45px!important;}
 .started_bg{background-color:#e0e0e0; border-color:#e0e0e0; padding:23px;}
@@ -72,6 +72,7 @@ a{cursor:pointer; text-decoration:none;}
 .ins_body{padding:1.25rem 1.25rem 0rem 1.25rem;}
 .mt_45{margin-top:45px;}
 .ins_bg{background:#c03aa5 url(../assets/img/ins_bg.jpg) no-repeat; background-size:cover; font-family: 'Quicksand', sans-serif; color:#fff;}
+.disable_link{cursor:auto!important;}
 
 @media screen and (max-width: 1024px){
 .home_footer .row{flex-wrap:inherit!important;}
